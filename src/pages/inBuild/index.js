@@ -8,8 +8,10 @@ const divStyle = {
   "minHeight": "100%",
   padding: "10px"
 };
+// Para usar aqui uso camel case no css.
+// para usar no css uso css comum
 
-class Home extends Component {
+class InBuild extends Component {
 
 
   render() {
@@ -30,4 +32,4 @@ class Home extends Component {
 // function Home() {
 
 // }
-export default Home;
+export default InBuild;
