@@ -1,3 +1,39 @@
+# Projeto de sistema de gerenciamento de compras.
+## voltado para resolver o problemas:
+
+<ol>
+<li>Lista de compras que possa ser atualizada por minha esposa enquanto estou no mercado.</li>
+<li>No mercado a lista deve ser exibida na ordem de um traçado mínimo, no qual não preciso passar novamente por um corredor, e agrupados por proximidade dos produtos.</li>
+<li> Historico de preço de produtos para orientar minhas compras.</li>
+<li>Ao criar uma lista deve ser exibido o valor aproximado do total da compra.</li>
+<li>Ao atualizar ou inserir itens a minha lista de compras deve ser atualizada com um valor final.</li>
+</ol>
+
+<br>
+
+# Observações de projeto.
+<p>Bootstrap - foi inserido no arquivo app.js</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+# React itens
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
