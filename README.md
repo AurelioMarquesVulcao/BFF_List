@@ -12,7 +12,7 @@
 <br>
 
 # Observações de projeto.
-<p>Bootstrap - foi inserido no arquivo app.js</p>
+<p>Bootstrap - foi inserido no index html, devo baixar os arquivos e inserir la manualmente para evitar bugs.</p>
 
 
 
