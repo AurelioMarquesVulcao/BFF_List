@@ -15,6 +15,7 @@ class CardList extends Component {
       <div>
         <Card>
           <Card.Body>Dados do produto </Card.Body>
+        Dados a serem usados
           <Button variant="light">Light</Button>
         </Card>
       </div>
