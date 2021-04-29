@@ -1,42 +1,18 @@
-import React, { Component } from 'react';
+import { ChakraProvider } from '@chakra-ui/react';
+import React from 'react';
+import Header from './components/header';
 import Routes from './routes';
+import theme from './theme';
 
+// import { Container } from './styles';
 
-
-
-// import './assets/bootstrap-4.1.3/dist/js/bootstrap.min.js';
-
-// import logo from './logo.svg';
-// import './App.css';
-// import { Button } from 'react-bootstrap';
-
-
-
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <div class="">
-
-//       <div class="row alert alert-primary justify-content-between" role="alert">
-//         Teste de um belo card
-//         <Button variant="primary">Primary</Button>{' '}
-//       </div>
-
-//       </div>
-
-//     </div>
-//   );
-// }
-
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <Routes/>
-      </div>
-    );
-  }
+function App() {
+  return (
+    <ChakraProvider theme={theme}>
+     <Header />
+     <Routes />
+    </ChakraProvider>
+  )
 }
 
 export default App;
