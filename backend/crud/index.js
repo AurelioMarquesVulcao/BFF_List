@@ -14,6 +14,7 @@ class CosultBasic {
   }
   static async post(req, res) {
     let data = req.body;
+    console.log(data);
     let resolve;
     try {
       resolve = await new DataProduct(data).save();

@@ -5,7 +5,7 @@ const dataBase = new mongoose.Schema({
   userId: String,
   productName: String,
   sellPrice: Number,
-  shopSellPrice: [{ shopName: String, shopId: String, sellPrice: Number }],
+  // shopSellPrice: [{ shopName: String, shopId: String, sellPrice: Number }],
   image: String,
 });
 
@@ -35,18 +35,17 @@ const shoppingList = new mongoose.Schema({
 
 const ShoppingList = mongoose.model("ShoppingList", shoppingList, "shoppingList");
 
-module.exports.DataProduct = ShoppingList;
+module.exports.ShoppingList = ShoppingList;
 
 const userData = new mongoose.Schema({
-    Date: Date,
-    updateDate:[],
-    name: String,
-    email: String,
-    key: String,
-    authKey: String
+  Date: Date,
+  updateDate: [],
+  name: String,
+  email: String,
+  key: String,
+  authKey: String,
+});
 
-  });
-  
-  const UserData = mongoose.model("UserData", userData, "userData");
-  
-  module.exports.DataProduct = UserData;
+const UserData = mongoose.model("UserData", userData, "userData");
+
+module.exports.UserData = UserData;
