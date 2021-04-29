@@ -1,31 +1,11 @@
-import React, { Component } from 'react';
-import { Card } from 'react-bootstrap';
-import { Button } from 'react-bootstrap';
-// const paginaEmConstrucao =require('../../assets')
-// import paginaEmConstrucao from '../../assets/paginaEmConstrucao.png';
+import React from 'react';
 
-// Para usar aqui uso camel case no css.
-// para usar no css uso css comum
+// import { Container } from './styles';
 
-class CardList extends Component {
-
-
-  render() {
-    return (
-      <div>
-        <Card>
-          <Card.Body>Dados do produto </Card.Body>
-        Dados a serem usados
-          <Button variant="light">Light</Button>
-        </Card>
-      </div>
-    );
-
-  }
+function CardList() {
+  return (
+  <h1>Card list</h1>
+  )
 }
 
-
-// function Home() {
-
-// }
 export default CardList;
