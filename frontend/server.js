@@ -10,6 +10,6 @@ app.get('*', (req,res) => res.sendFile('index.html' , { root : baseDir }))
 
 // app.get('*', (req,res) => res.sendFile('index.html' , { root : baseDir }))
 
-const port = 3000
+const port = 3001
 
 app.listen(port, () => console.log(`Servidor subiu com sucesso em http://localhost:${port}`))
