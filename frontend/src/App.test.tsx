@@ -9,3 +9,11 @@ test('renders learn react link', () => {
 
   expect(linkElement).toBeInTheDocument();
 });
+
+test('renders learn react link -02', () => {
+  render(<App />);
+
+  const linkElement = screen.getByText("Log in");
+
+  expect(linkElement).toBeInTheDocument();
+});
