@@ -1,8 +1,22 @@
 import { Button, Flex, Heading, Input } from "@chakra-ui/react";
 // import React from "react";
-import { Link, useHistory } from "react-router-dom"
+// import { Link, useHistory} from "react-router-dom"
+
+import { createBrowserHistory } from "history"
+
 
 const LoginPage = () => {
+  // const chamaLogin = () => {
+  //   window.location.href ='/login.js'
+  //  }
+  
+  // const history = createBrowserHistory({
+  //   basename: "/"
+  // })
+  // window.redirect = history.push
+  // onClick() {
+  //   redirect("/home")
+  // }
   // const history = useHistory
   // const api = () => {
   //   return new Promise((resolve,reject) => {
@@ -22,7 +36,7 @@ const LoginPage = () => {
       <Input placeholder="aurelio@teste.com" variant="filled" mb={3} type="email" />
       <Input placeholder="*****" variant="filled" mb={6} type="password" />
       {/* <Button colorScheme="teal" onClick={() => handleSubmit}> */}
-      <Button colorScheme="teal" >
+      <Button colorScheme="teal">
         Log in
       </Button>
     </Flex>
