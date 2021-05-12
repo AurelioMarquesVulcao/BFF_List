@@ -6,12 +6,13 @@ name: Node.js CI
 on:
   push:
     branches: [ main, develop, feature/autenticacao, feature/telaInicial, master ]
-    tags:        
-      - v1.*  
+    # tags:        
+    #   - v1.*  
   pull_request:
     branches: [ main, develop ]
-    tags:        
-      - v1.*
+    tags:
+      - v1             # Push events to v1 tag        
+      - v1.*           # Push events to v1.0, v1.1, and v1.9 tags
 
 jobs:
   build:
