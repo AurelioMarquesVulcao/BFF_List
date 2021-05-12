@@ -6,6 +6,8 @@ name: Node.js CI
 on:
   push:
     branches: [ main, develop, feature/autenticacao, feature/telaInicial, master ]
+    tags:        
+      - v1.*  
   pull_request:
     branches: [ main, develop ]
     tags:        
