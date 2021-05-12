@@ -2,7 +2,7 @@ import { Button, Flex, Heading, Input } from "@chakra-ui/react";
 import React, { Component } from "react";
 // import { Link, useHistory} from "react-router-dom"
 
-import { createBrowserHistory } from "history";
+// import { createBrowserHistory } from "history";
 
 class Home extends Component {
   constructor(props) {

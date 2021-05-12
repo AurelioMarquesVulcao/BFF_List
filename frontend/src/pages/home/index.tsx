@@ -5,7 +5,7 @@ import { Button, Flex, Heading, Input } from "@chakra-ui/react";
 // import { createBrowserHistory } from "history"
 
 
-const LoginPage = () => {
+const Home = () => {
   // const chamaLogin = () => {
   //   window.location.href ='/login.js'
   //  }
@@ -43,4 +43,4 @@ const LoginPage = () => {
   </Flex>
 )};
 
-export default LoginPage;
+export default Home;
