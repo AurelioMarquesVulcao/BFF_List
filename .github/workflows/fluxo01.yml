@@ -76,11 +76,11 @@ jobs:
       - run: yarn 
         working-directory: ./backend
 
-      # - run: yarn test
-      #   working-directory: ./backend
+      - run: yarn test
+        working-directory: ./backend
 
-      # - run: yarn test --coverage
-      #   working-directory: ./frontend
+      - run: yarn test --coverage
+        working-directory: ./backend
         env: 
           CI: true
           API_PORT: 3001
