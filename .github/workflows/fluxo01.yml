@@ -5,7 +5,7 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ main, develop, feature/autenticacao, feature/telaInicial ]
+    branches: [ main, develop, feature/autenticacao, feature/telaInicial, master ]
   pull_request:
     branches: [ main, develop ]
 
