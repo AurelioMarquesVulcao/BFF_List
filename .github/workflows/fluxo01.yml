@@ -32,6 +32,8 @@ jobs:
     # - run: ls -la
     - run: yarn test
       working-directory: ./frontend
+    - run: yarn test --coverage
+      working-directory: ./frontend
       env: 
         CI: true
     
