@@ -32,7 +32,7 @@ jobs:
       #     restore-key: |
       #       ${{ runner.os}}-yarn-
               
-      - name: Intall deps, build and test          
+      # - name: Intall deps, build and test          
       - run: yarn
         working-directory: ./frontend
 
