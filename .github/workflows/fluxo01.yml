@@ -6,8 +6,9 @@ name: Node.js CI
 on:
   push:
     branches: [ main, develop, feature/autenticacao, feature/telaInicial, master ]
-    # tags:        
-    #   - v1.*  
+    tags:
+      - v1             # Push events to v1 tag        
+      - v1.*           # Push events to v1.0, v1.1, and v1.9 tags 
   pull_request:
     branches: [ main, develop ]
     tags:
@@ -15,30 +16,98 @@ on:
       - v1.*           # Push events to v1.0, v1.1, and v1.9 tags
 
 jobs:
-  build:
-
+  frontend:
     runs-on: ubuntu-latest
-
-#     strategy:
-#       matrix:
-#         node-version: [10.x, 12.x, 14.x, 15.x]
-#         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
     steps:
-    - uses: actions/checkout@v2
-    - name: install Node.js 
-      uses: actions/setup-node@v1
-      with:
-        node-version: 12.x
-        # name: my-artifact-for-30-days
-        # path: artifact/path
-        # expiration: 30d # '30days' or '30 days' would also work
-    - run: yarn
-      working-directory: ./frontend
-    - run: yarn test
-      working-directory: ./frontend
-    - run: yarn test --coverage
-      working-directory: ./frontend
-      env: 
-        CI: true
+      - uses: actions/checkout@v2
+      - name: install Node.js 
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+
+      - uses: actions/cache@v2
+        # with:
+        #   path: ~/.cache/yarn
+        #   key: ${{ runner.os }}-yarn-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
+        #   restore-key: |
+        #     ${{ runner.os}}-yarn-
+        #
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+              
+      # - name: Intall deps, build and test          
+      - run: yarn 
+        working-directory: ./frontend
+
+      - run: yarn test
+        working-directory: ./frontend
+
+      - run: yarn test --coverage
+        working-directory: ./frontend
+        env: 
+          CI: true
+          # MY_VAR: Hi there! My name is
+          # FIRST_NAME: Mona
+          # MIDDLE_NAME: The
+          # LAST_NAME: Octocat
+  
+  backend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: install Node.js 
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+
+      - uses: actions/cache@v2
+        # with:
+        #   path: ~/.cache/yarn
+        #   key: ${{ runner.os }}-yarn-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
+        #   restore-key: |
+        #     ${{ runner.os}}-yarn-
+        #
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+              
+      # - name: Intall deps, build and test          
+      - run: yarn 
+        working-directory: ./backend
+
+      - run: yarn test
+        working-directory: ./backend
+
+      - run: yarn test --coverage
+        working-directory: ./backend
+        env: 
+          CI: true
+          API_PORT: 3001
+          MONGO_ADDRESS1: mongodb://root:root@127.0.0.1:12345
+          MONGO_ADDRESS: mongodb+srv://admin:1234@cluster0-9jhwf.mongodb.net/BFF_list?authSource=admin&replicaSet=Cluster0-shard-0&w=majority&readPreference=primary&appname=MongoDB%20Compass&retryWrites=true&ssl=true
+          MONGO_PORT: 12345
+          MONGO_ROOT_USERNAME: root
+          MONGO_ROOT_PASSWORD: root
+  # docker:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - name: My first step
+  #     uses: docker://node:13.12.0-alpine
+  #   # - uses: actions/checkout@v2
+  #   - name: install Node.js 
+  #     uses: actions/setup-node@v1
+  #     with:
+  #       node-version: 12.x
+  #       # name: my-artifact-for-30-days
+  #       # path: artifact/path
+  #       # expiration: 30d # '30days' or '30 days' would also work
+  #   - run: yarn
+  #     working-directory: ./frontend
+  #   - run: yarn test
+  #     working-directory: ./frontend
+  #   - run: yarn test --coverage
+  #     working-directory: ./frontend
+  #     env: 
+  #       CI: true
     
