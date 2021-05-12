@@ -4,10 +4,10 @@ const routes = express.Router();
 const {CosultBasic} = require('./crud/index');
 
 routes.get("/", function (req, res) {
-  return res.send("Você esta no APP BFF List da Zoeira");
+  return res.send({"message": "Você esta no APP BFF List da Zoeira"});
 });
 routes.post("/", function (req, res) {
-  return res.send("Você esta no APP BFF List da Zoeira");
+  return res.send({"message": "Você esta no APP BFF List da Zoeira"});
 });
 
 

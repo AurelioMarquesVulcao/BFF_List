@@ -83,10 +83,12 @@ jobs:
       #   working-directory: ./frontend
         env: 
           CI: true
-          # MY_VAR: Hi there! My name is
-          # FIRST_NAME: Mona
-          # MIDDLE_NAME: The
-          # LAST_NAME: Octocat
+          API_PORT: 3001
+          MONGO_ADDRESS1: mongodb://root:root@127.0.0.1:12345
+          MONGO_ADDRESS: mongodb+srv://admin:1234@cluster0-9jhwf.mongodb.net/BFF_list?authSource=admin&replicaSet=Cluster0-shard-0&w=majority&readPreference=primary&appname=MongoDB%20Compass&retryWrites=true&ssl=true
+          MONGO_PORT: 12345
+          MONGO_ROOT_USERNAME: root
+          MONGO_ROOT_PASSWORD: root
   # docker:
   #   runs-on: ubuntu-latest
   #   steps:
