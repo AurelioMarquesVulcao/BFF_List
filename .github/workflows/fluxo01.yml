@@ -34,6 +34,8 @@ jobs:
       working-directory: ./frontend
     - run: yarn test_render
       working-directory: ./frontend
+    - run: yarn coverage
+      working-directory: ./frontend
       env: 
         CI: true
     
