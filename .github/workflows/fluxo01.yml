@@ -16,7 +16,7 @@ on:
       - v1.*           # Push events to v1.0, v1.1, and v1.9 tags
 
 jobs:
-  build:
+  frontend:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -52,7 +52,7 @@ jobs:
           # MIDDLE_NAME: The
           # LAST_NAME: Octocat
   
-  build2:
+  backend:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2

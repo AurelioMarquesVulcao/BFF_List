@@ -1,9 +1,3 @@
-// const express = require("express");
-// const app = express()
-
-// app.get('/', (req,res)=>{
-
-// })
 const request = require("supertest");
 const app = require("../index");
 
