@@ -47,7 +47,43 @@ jobs:
         working-directory: ./frontend
         env: 
           CI: true
-          MY_VAR: Hi there! My name is
+          # MY_VAR: Hi there! My name is
+          # FIRST_NAME: Mona
+          # MIDDLE_NAME: The
+          # LAST_NAME: Octocat
+  
+  build2:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: install Node.js 
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+
+      - uses: actions/cache@v2
+        # with:
+        #   path: ~/.cache/yarn
+        #   key: ${{ runner.os }}-yarn-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
+        #   restore-key: |
+        #     ${{ runner.os}}-yarn-
+        #
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+              
+      # - name: Intall deps, build and test          
+      - run: yarn 
+        working-directory: ./backend
+
+      # - run: yarn test
+      #   working-directory: ./backend
+
+      # - run: yarn test --coverage
+      #   working-directory: ./frontend
+        env: 
+          CI: true
+          # MY_VAR: Hi there! My name is
           # FIRST_NAME: Mona
           # MIDDLE_NAME: The
           # LAST_NAME: Octocat
