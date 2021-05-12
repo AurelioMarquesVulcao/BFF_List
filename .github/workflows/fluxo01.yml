@@ -25,9 +25,9 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 12.x
-        name: my-artifact-for-one-day
-        path: path/to/another/artifact
-        expires: 86400
+        name: my-artifact-for-30-days
+        path: artifact/path
+        expiration: 30d # '30days' or '30 days' would also work
     - run: yarn
       working-directory: ./frontend
     - run: yarn test
