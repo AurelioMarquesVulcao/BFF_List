@@ -8,6 +8,8 @@ on:
     branches: [ main, develop, feature/autenticacao, feature/telaInicial, master ]
   pull_request:
     branches: [ main, develop ]
+    tags:        
+      - v1.*
 
 jobs:
   build:
