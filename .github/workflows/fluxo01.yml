@@ -25,15 +25,18 @@ jobs:
         with:
           node-version: 12.x
 
-      - uses: actions/cache@v1
+      - uses: actions/cache@v2
+        # with:
+        #   path: ~/.cache/yarn
+        #   key: ${{ runner.os }}-yarn-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
+        #   restore-key: |
+        #     ${{ runner.os}}-yarn-
         with:
-          path: ~/.cache/yarn
-          key: ${{ runner.os }}-yarn-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
-          restore-key: |
-            ${{ runner.os}}-yarn-
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
               
       # - name: Intall deps, build and test          
-      - run: yarn --frozen-lockfile
+      - run: yarn 
         working-directory: ./frontend
 
       - run: yarn test
