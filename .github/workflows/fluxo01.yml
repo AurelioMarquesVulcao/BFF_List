@@ -20,24 +20,18 @@ jobs:
 #         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    # - uses: actions/checkout@v2
+    - uses: actions/checkout@v2
     - name: install Node.js 
       uses: actions/setup-node@v2
       with:
         node-version: 12.x
-
-    - name: Install dependencies
+    # - run: cd frontend
+    # - run: ls -la
     - run: yarn
       working-directory: ./frontend
-
-    - name: Simple Test
+    # - run: ls -la
     - run: yarn test
       working-directory: ./frontend
-
-    - name: Coverage Test
-    - run: yarn test --coverage
-      working-directory: ./frontend
-      
       env: 
         CI: true
     
