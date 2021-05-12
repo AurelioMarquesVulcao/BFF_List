@@ -43,7 +43,7 @@ jobs:
         working-directory: ./frontend
         env: 
           CI: true
-          # MY_VAR: Hi there! My name is
+          MY_VAR: Hi there! My name is
           # FIRST_NAME: Mona
           # MIDDLE_NAME: The
           # LAST_NAME: Octocat
