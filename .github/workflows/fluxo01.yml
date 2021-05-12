@@ -25,11 +25,8 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: 12.x
-    # - run: cd frontend
-    # - run: ls -la
     - run: yarn
       working-directory: ./frontend
-    # - run: ls -la
     - run: yarn test
       working-directory: ./frontend
     - run: yarn test --coverage
