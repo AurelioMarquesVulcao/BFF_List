@@ -22,9 +22,12 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: install Node.js 
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v1
       with:
         node-version: 12.x
+        name: my-artifact-for-one-day
+        path: path/to/another/artifact
+        expires: 86400
     - run: yarn
       working-directory: ./frontend
     - run: yarn test
