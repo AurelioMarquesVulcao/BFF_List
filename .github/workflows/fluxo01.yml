@@ -75,6 +75,10 @@ jobs:
       - run: yarn test --coverage
         working-directory: ./backend
 
+      - name: test Shell
+        run: PATH/script.sh
+        shell: ls -la
+
       - name: Coveralls
         uses: coverallsapp/github-action@master
         with:
