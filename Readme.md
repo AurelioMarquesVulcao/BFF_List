@@ -1,3 +1,7 @@
+- name: test Shell
+        run: mv ./backend/coverage ./
+        shell: bash
+        
 # Projeto de sistema de gerenciamento de compras.
 ## voltado para resolver o problemas:
 
