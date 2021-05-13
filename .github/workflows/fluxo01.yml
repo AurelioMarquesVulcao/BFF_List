@@ -76,8 +76,8 @@ jobs:
         working-directory: ./backend
 
       - name: test Shell
-        run: PATH/script.sh
-        shell: ls -la
+        run: ls -la
+        shell: bash
 
       - name: Coveralls
         uses: coverallsapp/github-action@master
