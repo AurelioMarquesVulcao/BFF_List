@@ -1,6 +1,4 @@
-- name: test Shell
-        run: mv ./backend/coverage ./
-        shell: bash
+[![Coverage Status](https://coveralls.io/repos/github/AurelioMarquesVulcao/BFF_List/badge.svg?branch=main)](https://coveralls.io/github/AurelioMarquesVulcao/BFF_List?branch=main)
         
 # Projeto de sistema de gerenciamento de compras.
 ## voltado para resolver o problemas:
