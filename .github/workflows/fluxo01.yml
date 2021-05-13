@@ -102,6 +102,11 @@ jobs:
       - run: yarn test --coverage
         working-directory: ./backend
 
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
       # - uses: actions/checkout@v2
       # - uses: everlytic/branch-merge@1.1.0
       #   with:
