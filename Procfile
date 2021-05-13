@@ -1,2 +1,1 @@
-cd frontend
-yarn start
+docker-compose up -d
