@@ -40,21 +40,7 @@ jobs:
 
       - run: yarn test --coverage
         working-directory: ./backend
-
-      - name: test Shell
-        run: mv ./backend/coverage ./
-        shell: bash
-
-      - name: test Shell ok?
-        run: ls -la
-        shell: bash
-
-      - name: Coveralls
-        uses: coverallsapp/github-action@master
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-
-      
+     
       - uses: actions/checkout@v2
       - uses: everlytic/branch-merge@1.1.0
         with:
