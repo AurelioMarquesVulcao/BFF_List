@@ -76,6 +76,10 @@ jobs:
         working-directory: ./backend
 
       - name: test Shell
+        run: mv ./backend/coverage ./
+        shell: bash
+
+      - name: test Shell ok?
         run: ls -la
         shell: bash
 
