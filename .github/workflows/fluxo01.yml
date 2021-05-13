@@ -1,21 +1,11 @@
-# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
-# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
-
 name: Node.js CI
 
 on:
   push:
     branches:
-      - "**"             # Push in all branchs
-    # branches: [ main, develop, feature/autenticacao, feature/telaInicial, master ]
-    # tags:
-    #   - v1             # Push events to v1 tag        
-    #   - v1.*           # Push events to v1.0, v1.1, and v1.9 tags 
+      - "**"             # Push in all branchs 
   pull_request:
     branches: [ main, develop ]
-    # tags:
-    #   - v1             # Push events to v1 tag        
-    #   - v1.*           # Push events to v1.0, v1.1, and v1.9 tags
 
 jobs:
   frontend:
@@ -28,17 +18,10 @@ jobs:
           node-version: 12.x
 
       - uses: actions/cache@v2
-        # with:
-        #   path: ~/.cache/yarn
-        #   key: ${{ runner.os }}-yarn-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
-        #   restore-key: |
-        #     ${{ runner.os}}-yarn-
-        #
         with:
           path: '**/node_modules'
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
-              
-      # - name: Intall deps, build and test          
+          
       - run: yarn 
         working-directory: ./frontend
 
@@ -67,10 +50,6 @@ jobs:
           commit_message_template: '[CI CD - Automated] Merged --"{source_ref}"-- into target {target_branch}'
         env: 
           CI: true
-          # MY_VAR: Hi there! My name is
-          # FIRST_NAME: Mona
-          # MIDDLE_NAME: The
-          # LAST_NAME: Octocat
   
   backend:
     runs-on: ubuntu-latest
@@ -82,18 +61,12 @@ jobs:
           node-version: 12.x
 
       - uses: actions/cache@v2
-        # with:
-        #   path: ~/.cache/yarn
-        #   key: ${{ runner.os }}-yarn-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
-        #   restore-key: |
-        #     ${{ runner.os}}-yarn-
-        #
         with:
           path: '**/node_modules'
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
               
-      # - name: Intall deps, build and test          
-      - run: yarn 
+      - name: Intall deps, build and test          
+        run: yarn 
         working-directory: ./backend
 
       - run: yarn test
@@ -106,6 +79,7 @@ jobs:
         uses: coverallsapp/github-action@master
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          working-directory: ./backend
 
       # - uses: actions/checkout@v2
       # - uses: everlytic/branch-merge@1.1.0
