@@ -31,7 +31,7 @@ test('renders Login', () => {
 test('renders Login', () => {
   render(<Home />);
 
-  const linkElement = screen.getByText("Test");
+  const linkElement = screen.getByText("Log in");
 
   expect(linkElement).toBeInTheDocument();
 });
