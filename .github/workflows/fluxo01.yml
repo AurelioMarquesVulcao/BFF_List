@@ -47,6 +47,16 @@ jobs:
 
       - run: yarn test --coverage
         working-directory: ./frontend
+
+      # - backend tests
+      - run: yarn 
+        working-directory: ./backend
+
+      - run: yarn test
+        working-directory: ./backend
+
+      - run: yarn test --coverage
+        working-directory: ./backend
       
       - uses: actions/checkout@v2
       - uses: everlytic/branch-merge@1.1.0
