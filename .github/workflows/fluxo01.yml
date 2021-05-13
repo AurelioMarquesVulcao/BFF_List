@@ -6,7 +6,7 @@ name: Node.js CI
 on:
   push:
     branches:
-      - "*"             # Push in all branchs
+      - "**"             # Push in all branchs
     # branches: [ main, develop, feature/autenticacao, feature/telaInicial, master ]
     # tags:
     #   - v1             # Push events to v1 tag        
