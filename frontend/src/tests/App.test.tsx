@@ -27,3 +27,11 @@ test('renders Login', () => {
 
   expect(linkElement).toBeInTheDocument();
 });
+
+test('renders Login', () => {
+  render(<Home />);
+
+  const linkElement = screen.getByText("Log in");
+
+  expect(linkElement).toBeInTheDocument();
+});
