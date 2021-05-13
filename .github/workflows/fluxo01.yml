@@ -47,6 +47,14 @@ jobs:
 
       - run: yarn test --coverage
         working-directory: ./frontend
+      
+      - uses: actions/checkout@v2
+      - uses: everlytic/branch-merge@1.1.0
+        with:
+          github_token: ${{ github.token }}
+          source_ref: ${{ github.ref }}
+          target_branch: 'develop'
+          commit_message_template: '[CI CD - Automated] Merged --"{source_ref}"-- into target {target_branch}'
         env: 
           CI: true
           # MY_VAR: Hi there! My name is
@@ -83,6 +91,14 @@ jobs:
 
       - run: yarn test --coverage
         working-directory: ./backend
+
+      - uses: actions/checkout@v2
+      - uses: everlytic/branch-merge@1.1.0
+        with:
+          github_token: ${{ github.token }}
+          source_ref: ${{ github.ref }}
+          target_branch: 'develop'
+          commit_message_template: '[CI CD - Automated] Merged --"{source_ref}"-- into target {target_branch}'
         env: 
           CI: true
           API_PORT: 3001
@@ -92,16 +108,16 @@ jobs:
           MONGO_ROOT_USERNAME: root
           MONGO_ROOT_PASSWORD: root
 
-  merge-branch:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: everlytic/branch-merge@1.1.0
-        with:
-          github_token: ${{ github.token }}
-          source_ref: ${{ github.ref }}
-          target_branch: 'develop'
-          commit_message_template: '[CI CD - Automated] Merged {source_ref} into target {target_branch}'
+  # merge-branch:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - uses: everlytic/branch-merge@1.1.0
+  #       with:
+  #         github_token: ${{ github.token }}
+  #         source_ref: ${{ github.ref }}
+  #         target_branch: 'develop'
+  #         commit_message_template: '[CI CD - Automated] Merged --"{source_ref}"-- into target {target_branch}'
   
   
   # docker:
