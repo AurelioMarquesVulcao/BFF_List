@@ -31,18 +31,18 @@ jobs:
       - run: yarn test --coverage
         working-directory: ./frontend
 
-      - name: test Shell
-        run: mv ./frontend/coverage ./
-        shell: bash
+      # - name: test Shell
+      #   run: mv ./frontend/coverage ./
+      #   shell: bash
 
-      - name: test Shell ok?
-        run: ls -la
-        shell: bash
+      # - name: test Shell ok?
+      #   run: ls -la
+      #   shell: bash
 
-      - name: Coveralls
-        uses: coverallsapp/github-action@master
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+      # - name: Coveralls
+      #   uses: coverallsapp/github-action@master
+      #   with:
+      #     github-token: ${{ secrets.GITHUB_TOKEN }}
 
 
       # - backend tests
