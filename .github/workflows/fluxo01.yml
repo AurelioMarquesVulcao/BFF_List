@@ -32,7 +32,7 @@ jobs:
         working-directory: ./frontend
 
       - name: test Shell
-        run: mv ./backend/coverage ./
+        run: mv ./frontend/coverage ./
         shell: bash
 
       - name: test Shell ok?
