@@ -17,22 +17,7 @@
 <p>Bootstrap - foi inserido no index html, devo baixar os arquivos e inserir la manualmente para evitar bugs.</p>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br>
 
 # React itens
 
