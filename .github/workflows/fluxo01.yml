@@ -89,22 +89,23 @@ jobs:
       - run: yarn test --coverage
         working-directory: ./backend
 
-      - name: test Shell
-        run: mv ./backend/coverage ./
-        shell: bash
+      # - name: test Shell
+      #   run: mv ./backend/coverage ./
+      #   shell: bash
 
-      - name: test Shell ok?
-        run: ls -la
-        shell: bash
+      # - name: test Shell ok?
+      #   run: ls -la
+      #   shell: bash
 
-      - name: test Shell ok?
-        run: cat coverage/lcov.info
-        shell: bash
+      # - name: test Shell ok?
+      #   run: cat coverage/lcov.info
+      #   shell: bash
 
       - name: Coveralls
         uses: coverallsapp/github-action@master
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          path-to-lcov: ./backend/coverage/lcov.info
 
       # c3igODi9BUAtirZflACYsO5RCI6dXcMbHDJ9h
       # - uses: actions/checkout@v2
