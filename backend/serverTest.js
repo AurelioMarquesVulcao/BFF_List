@@ -13,7 +13,7 @@ class App {
     this.routes();
 
     
-    this.express.listen(enums.apiPort, () =>
+    this.express.listen(3333, () =>
       console.log(`Sua API REST está funcionando na porta ${enums.apiPort} `)
     );
   }
