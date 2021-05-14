@@ -97,6 +97,10 @@ jobs:
         run: ls -la
         shell: bash
 
+      - name: test Shell ok?
+        run: cat coverage/lcov.info
+        shell: bash
+
       - name: Coveralls
         uses: coverallsapp/github-action@master
         with:
