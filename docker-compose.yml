@@ -9,7 +9,7 @@ services:
     # - '.:/app'
     # - '/app/node_modules'
     ports:
-      - "3305:3000"
+      - "3305:3001"
     environment:
       - CHOKIDAR_USEPOLLING=true
     restart: always
