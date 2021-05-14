@@ -1,5 +1,9 @@
 const request = require("supertest");
 const app = require("../index");
+const mongoose = require("mongoose");
+(() => { 
+  mongoose.connection.close()
+})()
 
 describe("test-01", () => {
   it("get main route", async () => {
@@ -10,3 +14,5 @@ describe("test-01", () => {
     // .post("/").send({ name: "aurelio", senha: "senha" });
   });
 });
+
+

@@ -13,6 +13,7 @@
   },
   "scripts": {
     "start": "node index.js",
+    "test2": "jest --testEnvironment=node --watchAll --verbose --runInBand",
     "test": "jest --testEnvironment=node --verbose --forceExit --maxWorkers=1"
   },
   "devDependencies": {
