@@ -48,6 +48,20 @@ jobs:
           source_ref: ${{ github.ref }}
           target_branch: 'develop'
           commit_message_template: '[CI CD - Automated] Merged --"{source_ref}"-- into target {target_branch}'
+      
+      - name: test Shell
+        run: mv ./backend/coverage ./
+        shell: bash
+
+      - name: test Shell ok?
+        run: ls -la
+        shell: bash
+
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
         env: 
           CI: true
   
