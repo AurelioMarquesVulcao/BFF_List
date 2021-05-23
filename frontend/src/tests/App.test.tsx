@@ -12,13 +12,13 @@ test('renders App', () => {
   expect(linkElement).toBeInTheDocument();
 });
 
-test('renders Login', () => {
-  render(<LoginPage />);
+// test('renders Login', () => {
+//   render(<LoginPage />);
 
-  const linkElement = screen.getByText("Log in");
+//   const linkElement = screen.getByText("Log in");
 
-  expect(linkElement).toBeInTheDocument();
-});
+//   expect(linkElement).toBeInTheDocument();
+// });
 
 test('renders Login', () => {
   render(<Home />);
