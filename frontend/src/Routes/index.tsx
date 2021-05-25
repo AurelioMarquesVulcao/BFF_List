@@ -2,7 +2,7 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import LoginPage from "../pages/login";
-import Home from "../pages/home/index-01";
+import Home from "../pages/home";
 // import InBuild from './pages/inBuild';
 // import RegistrationList from './pages/registrationList';
 const Routes = () => {
