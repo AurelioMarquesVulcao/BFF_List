@@ -3,12 +3,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import InputItens from "../../components/inputItem";
 const Home = () => {
-  const produtoStorage = localStorage.getItem("Produtos")
+  const produtoStorage = localStorage.getItem("Produtos");
   let produto = [];
   if (produtoStorage) {
     produto = JSON.parse(produtoStorage);
   } else {
-  //   produto = ["teste", "teste2"];
+    //   produto = ["teste", "teste2"];
   }
   return (
     // <Flex height="100vh" alignItems="center" justifyContent="center">
@@ -23,12 +23,17 @@ const Home = () => {
     //   </Flex>
     // </Flex>
     <Flex direction="column">
+      <Heading align="center" margin="4">
+        Inserir Produto
+      </Heading>
       <InputItens />
       <Flex alignItems="center" justifyContent="center" margin="4">
         <Flex direction="column" background="red.100" p={130} rounded={12}>
           {/* {produtoStorage} */}
           {produto.map((x: any) => (
-            <ul key={x.id}>{x.produto} - {x.valor}</ul>
+            <ul key={x.id}>
+              {x.produto} - {x.valor}
+            </ul>
           ))}
         </Flex>
       </Flex>

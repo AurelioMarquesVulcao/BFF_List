@@ -23,7 +23,7 @@ test('renders App', () => {
 test('renders Login', () => {
   render(<Home />);
 
-  const linkElement = screen.getByText("Log in");
+  const linkElement = screen.getByText("Inserir Produto");
 
   expect(linkElement).toBeInTheDocument();
 });
@@ -31,7 +31,7 @@ test('renders Login', () => {
 test('renders Login', () => {
   render(<Home />);
 
-  const linkElement = screen.getByText("Log in");
+  const linkElement = screen.getByText("Inserir Produto");
 
   expect(linkElement).toBeInTheDocument();
 });
