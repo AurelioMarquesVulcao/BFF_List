@@ -1,6 +1,6 @@
-import { Button, Flex, Heading, Input } from "@chakra-ui/react";
+import {  Flex, Heading } from "@chakra-ui/react";
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import InputItens from "../../components/inputItem";
 const Home = () => {
   const produtoStorage = localStorage.getItem("Produtos");
