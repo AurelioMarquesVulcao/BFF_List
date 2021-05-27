@@ -2,6 +2,10 @@
         
 # Projeto de sistema de gerenciamento de compras.
 ## voltado para resolver o problemas:
+```
+npx create-react-app my-app --template cra-template-pwa-typescript
+
+```
 
 <ol>
 <li>Lista de compras que possa ser atualizada por minha esposa enquanto estou no mercado.</li>
