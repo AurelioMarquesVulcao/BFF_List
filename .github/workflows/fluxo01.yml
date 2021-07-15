@@ -10,6 +10,10 @@ on:
 jobs:
   frontend:
     runs-on: ubuntu-latest
+
+    env:
+      github-token: ${{ secrets.GITHUB_TOKEN }}
+
     steps:
       - uses: actions/checkout@v2
       - name: install Node.js 
@@ -30,6 +34,24 @@ jobs:
 
       - run: yarn test --coverage
         working-directory: ./frontend
+      
+      # - name: deployFront
+      # - run: cp ./frontend/* ./
+      # - run: ls -la
+
+      # - name: test Shell
+      #   run: mv ./frontend/coverage ./
+      #   shell: bash
+
+      # - name: test Shell ok?
+      #   run: ls -la
+      #   shell: bash
+
+      # - name: Coveralls
+      #   uses: coverallsapp/github-action@master
+      #   with:
+      #     github-token: ${{ secrets.GITHUB_TOKEN }}
+
 
       # - backend tests
       - run: yarn 
@@ -40,7 +62,7 @@ jobs:
 
       - run: yarn test --coverage
         working-directory: ./backend
-      
+     
       - uses: actions/checkout@v2
       - uses: everlytic/branch-merge@1.1.0
         with:
@@ -53,6 +75,10 @@ jobs:
   
   backend:
     runs-on: ubuntu-latest
+    
+    env:
+      github-token: ${{ secrets.GITHUB_TOKEN }}
+    
     steps:
       - uses: actions/checkout@v2
       - name: install Node.js 
@@ -75,18 +101,23 @@ jobs:
       - run: yarn test --coverage
         working-directory: ./backend
 
-      - name: test Shell
-        run: mv ./backend/coverage ./
-        shell: bash
+      # - name: test Shell
+      #   run: mv ./backend/coverage ./
+      #   shell: bash
 
-      - name: test Shell ok?
-        run: ls -la
-        shell: bash
+      # - name: test Shell ok?
+      #   run: ls -la
+      #   shell: bash
+
+      # - name: test Shell ok?
+      #   run: cat coverage/lcov.info
+      #   shell: bash
 
       - name: Coveralls
         uses: coverallsapp/github-action@master
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          path-to-lcov: ./backend/coverage/lcov.info
 
       # c3igODi9BUAtirZflACYsO5RCI6dXcMbHDJ9h
       # - uses: actions/checkout@v2
@@ -98,12 +129,12 @@ jobs:
       #     commit_message_template: '[CI CD - Automated] Merged --"{source_ref}"-- into target {target_branch}'
         env: 
           CI: true
-          API_PORT: 3001
-          MONGO_ADDRESS1: mongodb://root:root@127.0.0.1:12345
-          MONGO_ADDRESS: mongodb+srv://admin:1234@cluster0-9jhwf.mongodb.net/BFF_list?authSource=admin&replicaSet=Cluster0-shard-0&w=majority&readPreference=primary&appname=MongoDB%20Compass&retryWrites=true&ssl=true
-          MONGO_PORT: 12345
-          MONGO_ROOT_USERNAME: root
-          MONGO_ROOT_PASSWORD: root
+          # API_PORT: 3001
+          # MONGO_ADDRESS1: mongodb://root:root@127.0.0.1:12345
+          # MONGO_ADDRESS: mongodb+srv://admin:1234@cluster0-9jhwf.mongodb.net/BFF_list?authSource=admin&replicaSet=Cluster0-shard-0&w=majority&readPreference=primary&appname=MongoDB%20Compass&retryWrites=true&ssl=true
+          # MONGO_PORT: 12345
+          # MONGO_ROOT_USERNAME: root
+          # MONGO_ROOT_PASSWORD: root
 
   # merge-branch:
   #   runs-on: ubuntu-latest
